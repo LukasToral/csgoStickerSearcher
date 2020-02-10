@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
+          integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+            integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+            crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
+
+</head>
+<body>
+    
+    <div class="row">
+        <div class="col-md-12 header">
+            <h1>Sticker finder</h1>
+            <p>This website will help you to search for skins with stickers.</p>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4 weapon-types">
+            <div class="btn-group">
+                <form action="http://localhost:5000/" method="post">
+                <button type="submit" name="typeButton" value="pistols">Pistols</button>
+                <button type="submit" name="typeButton" value="smg">SMGs</button>
+                <button type="submit" name="typeButton" value="rifles">Rifles</button>
+                <button type="submit" name="typeButton" value="heavy">Heavy</button>
+            </div>
+        </div>
+    </div>
+    
+
+    <div class="weapons-list">
+        <div class="row">
+            <h1>{{ categoryName }}</h1>
+            {% for weapon in weaponNames %}
+                <div class="col-md-12 weapon">
+                    <h3>{{weapon}}</h3>
+                </div> 
+            {% endfor %}              
+        </div>
+    </div>
+
+</body>
+</html>
