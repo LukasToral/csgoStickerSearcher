@@ -3,14 +3,15 @@ width: 100%;
 height: 100%;
 margin: 0px;
 padding: 0px;
-overflow-x: hidden; 
-background-color: #1a355b;
+overflow-x: hidden;
+background-image: url("../img/bg-mb.png");
+
 color: white;
 }
 
 .header {
 text-align: center;	
-margin-top: 10%;
+margin-top: 5%;
 }
 
 .header h1 {
@@ -25,11 +26,8 @@ font-size: 25px;
 width: 40%;
 margin-left: 30%;
 text-align: center;
-background-color: #24426e;
-}
+background-color: rgb(36, 66, 110, 0.5)
 
-.weapon {
-	border-bottom: dotted #ffffff 1.5px;
 }
 
 .weapon-types {
@@ -37,18 +35,25 @@ background-color: #24426e;
 	margin-left: 30%;
 }
 
-.btn-group button {
-  background-color: #24426e; /* Green background */
-  border: 1px solid white; /* Green border */
-  color: white; /* White text */
-  padding: 10px 24px; /* Some padding */
-  cursor: pointer; /* Pointer/hand icon */
-  text-align: center;
+.button {
+    width: 100%;
+    height: 30px;
+    background-color: #24426e;
+    border: none;
 }
 
-/* Clear floats (clearfix hack) */
-.btn-group:after {
-  content: "";
-  clear: both;
-  display: table;
+.margin-bot {
+    margin-bottom: 20px;
+}
+
+.redirectButton {
+    width: 100%;
+    height: 40px;
+    background-color: transparent;
+    border: none;
+}
+
+.redirectButton:hover {
+    background-color: #1c345c;
+    color: white;
 }

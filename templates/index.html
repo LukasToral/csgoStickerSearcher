@@ -22,31 +22,42 @@
     <div class="row">
         <div class="col-md-12 header">
             <h1>Sticker finder</h1>
-            <p>This website will help you to search for skins with stickers.</p>
+            <p>This website will help you search for skins with stickers.</p>
         </div>
     </div>
 
-    <div class="row">
+    <div class="row margin-bot">
         <div class="col-md-4 weapon-types">
-            <div class="btn-group">
+            <div class="row">
                 <form action="http://localhost:5000/" method="post">
-                <button type="submit" name="typeButton" value="pistols">Pistols</button>
-                <button type="submit" name="typeButton" value="smg">SMGs</button>
-                <button type="submit" name="typeButton" value="rifles">Rifles</button>
-                <button type="submit" name="typeButton" value="heavy">Heavy</button>
+                    <div class="col-md-3">
+                        <button type="submit" class="button" name="typeButton" value="pistols">Pistols</button>
+                    </div>
+                     <div class="col-md-3">
+                        <button type="submit" class="button" name="typeButton" value="smg">SMGs</button>
+                    </div>
+                     <div class="col-md-3">
+                        <button type="submit" class="button" name="typeButton" value="rifles">Rifles</button>
+                    </div>
+                     <div class="col-md-3">
+                        <button type="submit" class="button" name="typeButton" value="heavy">Heavy</button>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
     
 
-    <div class="weapons-list">
+    <div class="weapons-list margin-bot">
         <div class="row">
             <h1>{{ categoryName }}</h1>
+            <form action="http://localhost:5000/" method="post">
             {% for weapon in weaponNames %}
                 <div class="col-md-12 weapon">
-                    <h3>{{weapon}}</h3>
+                    <button type="submit" class="redirectButton" name="redirectButton" value={{weapon}}>{{weapon}}</button>
                 </div> 
-            {% endfor %}              
+            {% endfor %}
+            </form>
         </div>
     </div>
 
