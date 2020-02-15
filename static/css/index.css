@@ -15,7 +15,7 @@ margin-top: 5%;
 }
 
 .header h1 {
-font-size: 75px;
+font-size: 50px;
 }
 
 .header p {
@@ -23,16 +23,15 @@ font-size: 25px;
 }
 
 .weapons-list {
-width: 40%;
-margin-left: 30%;
-text-align: center;
-background-color: rgb(36, 66, 110, 0.5)
-
+    text-align: center;
+    background-color: rgb(36, 66, 110, 0.5);
+    width: 40%;
+	margin-left: 30%;
 }
 
 .weapon-types {
 	width: 40%;
-	margin-left: 30%;
+    margin-left: 30%;
 }
 
 .button {
@@ -58,8 +57,42 @@ background-color: rgb(36, 66, 110, 0.5)
     color: white;
 }
 
-@media screen and (max-width: 480px) {
-    body {
-        color: black;
-    }
+.page-footer {
+    height: 5vh;
+    display: flex;
+    flex-direction: column;
+    background-color: #24426e;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+
+.footer-margin-top {
+   margin-top: 10px; 
+   margin-bottom: 0;
+}
+
+@media (max-width: 600px) {
+	.header h1 {
+		font-size: 30px;
+	}
+
+	.header p {
+		font-size: 15px;
+	}
+
+	.weapons-list {
+	    width: 100%;
+		margin-left: 0px;
+	}
+
+	.weapon-types {
+		width: 100%;
+		margin-left: 0px;
+	}
+
+	.margin-bot {
+		margin-bottom: 0px;
+	}
 }
