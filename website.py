@@ -28,7 +28,7 @@ WEAPONID = {
     'MP5-SD': 'tag_weapon_mp5sd',
     'FAMAS': 'tag_weapon_famas',
     'Galil-AR': 'tag_weapon_galilar',
-    'M4A4': 'tag_weapon_m4a4',
+    'M4A4': 'tag_weapon_m4a1',
     'M4A1-S': 'tag_weapon_m4a1_silencer',
     'AK-47': 'tag_weapon_ak47',
     'AUG': 'tag_weapon_aug',
@@ -48,8 +48,8 @@ WEAPONID = {
 
 def createRedirect(weaponName):
     redirectLink = "http://www.steamcommunity.com/market/search?q=&category_730_ItemSet%5B%5D=any&category_730_ProPlayer%5B%5D=any&category_730_StickerCapsule%5B%5D=any&category_730_TournamentTeam%5B%5D=any&category_730_Weapon%5B%5D={}&appid=730&q=Sticker+Exterior&descriptions=1".format(WEAPONID[weaponName])
-    print("Jsem taady")
-    redirect()
+    print (redirectLink)
+    return {"link": redirectLink, "code": 302}
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
@@ -73,8 +73,8 @@ def index():
             categoryName = 'Heavy'
 
     if request.method == 'POST' and 'redirectButton' in request.form:
-        createRedirect(request.form['redirectButton'])
-
+        redirectData = createRedirect(request.form['redirectButton'])
+        return redirect(redirectData["link"], code = redirectData["code"])
 
     # https://stackoverflow.com/questions/23155863/generating-an-html-code-from-a-flask-server
     # https://stackoverflow.com/questions/31282297/render-template-takes-exactly-1-argument/31282464
@@ -87,3 +87,4 @@ def index():
 
 if __name__ == '__main__':
     app.run(debug=True)
+
